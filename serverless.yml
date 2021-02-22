@@ -32,10 +32,10 @@ provider:
   # the following line. Also, make sure to not
   # commit your env.yml.
   #
-  environment:
-    name_of_var: ${env:NAME_OF_VAR}
-    tableDB: ${self:custom.tableDB}
-    account: ${env:ACCOUNT}
+  #environment:
+   # name_of_var: ${env:NAME_OF_VAR}
+   # tableDB: ${self:custom.tableDB}
+   # account: ${env:ACCOUNT}
 
   iamRoleStatements:
     - Effect: Allow
@@ -78,11 +78,11 @@ functions:
           integration: lambda-proxy
 
 resources:
-  - ${file(resources/sqs-queue.yml)}
+  #- ${file(resources/sqs-queue.yml)}
   - ${file(resources/table.yml)}
-  - ${file(resources/s3-bucket.yml)}
-  - ${file(resources/cognito-identity-pool.yml)}
-  - ${file(resources/cognito-user-pool.yml)}
+  #- ${file(resources/s3-bucket.yml)}
+  #- ${file(resources/cognito-identity-pool.yml)}
+  #- ${file(resources/cognito-user-pool.yml)}
   # events:
   #     - sqs:
   #         arn: "arn:aws:sqs:${self:provider.environment.region}:${self:provider.environment.account}:${self:provider.environment.quque_name}-${self:provider.stage}"
